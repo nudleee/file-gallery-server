@@ -56,9 +56,7 @@ app.get("/files", async (_, res) => {
 
     res.status(200).json(descFiles);
   } catch (error) {
-    console.log(process.env);
-    console.log(error);
-    res.status(500).send("Error fetching files");
+    res.status(500).send(error);
   }
 });
 
