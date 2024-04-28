@@ -8,18 +8,18 @@ In the project directorym you can run:
 
 `npm start`
 
-Runs the express app on the defined port or 8080 (PORT).
+Runs the express app on the defined port or 5000 (PORT).
 
 `npm run dev`
 
 Runs the express app as before but the server will reload if you make edits.
 
-`docker`
+## Docker
 
 Build image:
 
-```docker build -t gallery-server .```
+`docker build -t gallery-server .`
 
 Run image:
 
-```docker run -p 5000:5000 gallery-server```
+`docker run -p 5000:5000 gallery-server`
