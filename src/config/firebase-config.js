@@ -16,7 +16,6 @@ const firebaseConfig = {
 
 admin.initializeApp({
   credential: admin.credential.cert(firebaseConfig),
-  storageBucket: process.env.STORAGE_BUCKET,
 });
 
 module.exports = admin;
