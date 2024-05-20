@@ -8,10 +8,8 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 const storageAccount = process.env.AZURE_STORAGE_ACCOUNT;
 const containerName = process.env.AZURE_STORAGE_CONTAINER;
-const sasToken = process.env.AZURE_STORAGE_SAS;
-const blobServiceClient = new AzureStorageBlob.BlobServiceClient(
-  `https://${storageAccount}.blob.core.windows.net/?${sasToken}`,
-);
+const connectionString = process.env.AZURE_STORAGE_CONNECTION_STRING;
+const blobServiceClient = AzureStorageBlob.BlobServiceClient.fromConnectionString(connectionString);
 const containerClient = blobServiceClient.getContainerClient(containerName);
 
 const app = express();
